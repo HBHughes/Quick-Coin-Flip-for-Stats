@@ -1,11 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+Console.WriteLine("20 Million Coinflips");
 int h = 0;
 int t = 0;
-for (int i = 0; i < 30; i++) //30 coinflips
+for (int i = 0; i < 20000000; i++) // h/t ~~ 1 as lim i->inf *might integrate async if trying larger than 20m
 {
     bool state = Coins.CoinFlip();
-    Console.WriteLine(state);
     if (state==true)
     {
         h++;
@@ -15,8 +14,8 @@ for (int i = 0; i < 30; i++) //30 coinflips
         t++;
     }
 }
-Console.WriteLine(h);
-Console.WriteLine(t);
+Console.WriteLine("Heads: "+ h);
+Console.WriteLine("Tails: "+ t);
 public static class Coins
 {
     public static bool CoinFlip()
